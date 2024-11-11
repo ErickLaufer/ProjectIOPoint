@@ -14,7 +14,7 @@
     "build:mac": "npm run build && electron-builder --mac",
     "build:linux": "npm run build && electron-builder --linux"
   },
-  "repository": "https://github.com/ErickLaufer/WMS-ELEC/releases",
+  "repository": "https://github.com/ErickLaufer/ProjectIOPoint.git",
   "build": {
     "appId": "com.example.wms",
     "productName": "Remaini",
@@ -63,9 +63,9 @@
     "publish": {
       "provider": "github",
       "owner": "ErickLaufer",
-      "repo": "WMS-ELEC",
-      "releaseType": "release",
-      "token": "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"
+      "repo": "ProjectIOPoint",
+      "releaseType": "release"
+      // "token": ""
     }
   },
   "author": "Erick_Laufer",
