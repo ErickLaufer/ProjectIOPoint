@@ -1,0 +1,66 @@
+@import "../Bootstrap/css/bootstrap.min.css";
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../resources/Gifinstitucional.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px); /* Adiciona desfoque à imagem de fundo */
+}
+
+.content-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.user-icon {
+    cursor: initial;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 210px;
+    height: 120px;
+    border-radius: 50%;
+}
+.user-icon img{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+.form-label {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+#updateMessage {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0.8;
+    z-index: 1000;
+}

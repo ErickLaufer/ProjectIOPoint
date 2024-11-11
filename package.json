@@ -1,0 +1,89 @@
+{
+  "name": "remaini",
+  "version": "1.0.9",
+  "description": "Sistema de controle de Estoque e Producao",
+  "main": "./main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "build:unpack": "npm run build && electron-builder --dir",
+    "build:win": "npm run build && electron-builder --win --x64 --ia32",
+    "build:win32": "npm run build && electron-builder --win --ia32",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:linux": "npm run build && electron-builder --linux"
+  },
+  "repository": "https://github.com/ErickLaufer/WMS-ELEC/releases",
+  "build": {
+    "appId": "com.example.wms",
+    "productName": "Remaini",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "login.html",
+      "assets/**/**",
+      "backend/**/**",
+      "node_modules/**/**"
+    ],
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/resources/appIcon.png"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "assets/resources/appIcon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "runAfterFinish": true
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "maintainer": "Erick Laufer <erickdosgames@hotmail.com>",
+      "icon": "assets/resources/appIcon.png"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "ErickLaufer",
+      "repo": "WMS-ELEC",
+      "releaseType": "release",
+      "token": "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"
+    }
+  },
+  "author": "Erick_Laufer",
+  "email": "erickdosgames@hotmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "5.3",
+    "bootstrap-icons": "^1.11.3",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-updater": "^6.2.1",
+    "express": "^4.19.1",
+    "node-fetch": "^2.7.0",
+    "node-firebird": "^1.1.8",
+    "npm": "^10.8.2",
+    "prom-client": "^15.1.0"
+  },
+  "devDependencies": {
+    "electron": "^30.0.1",
+    "electron-builder": "^24.13.3"
+  }
+}

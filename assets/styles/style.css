@@ -1,0 +1,99 @@
+@import "../Bootstrap/css/bootstrap.min.css";
+
+body{
+    background-color: black;
+    background-image: url(../../assets/resources/icon.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+.product-card {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Expande ligeiramente */
+    /* filter: blur(1px); Aplica um leve desfoque */
+}
+.floating-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px;
+    border: 5px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+}
+.login-container {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.loginRelatorios-container{
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.login-container .user-icon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.loginRelatorios-container .user-icon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+#loginMessage- {
+    margin-top: 10px;
+    text-align: center;
+}
+#btn-voltar {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px 0;
+    width: 100%;
+}
+powerbi-div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#updateMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000; /* Para garantir que o elemento fique acima de outros conteúdos */
+}
+#searchIcon {
+    font-size: 18px;
+    color: #333;
+}
+#searchIcon:hover {
+    color: #007bff;
+}
+
