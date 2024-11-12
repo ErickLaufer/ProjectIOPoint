@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
 
-        if (username === 'producao' && password === 'gestao') {
+        if (username === 'flop' && password === 'flop') {
             if(isUpdating === true) {
                 document.getElementById('loginMessage').innerHTML = '<div class="alert alert-warning"> Atualização em andamento...</div>';
             }else{

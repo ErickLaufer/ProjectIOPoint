@@ -1,5 +1,5 @@
 {
-  "name": "remaini",
+  "name": "flop",
   "version": "1.0.9",
   "description": "Sistema de controle de Estoque e Producao",
   "main": "./main.js",
@@ -17,7 +17,7 @@
   "repository": "https://github.com/ErickLaufer/ProjectIOPoint.git",
   "build": {
     "appId": "com.example.wms",
-    "productName": "Remaini",
+    "productName": "FLOP",
     "directories": {
       "output": "dist"
     },
