@@ -3,45 +3,45 @@ const {autoUpdater} = require("electron-updater");
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const getAllProduction = require('./backend/js/relatorios/getAllProduction');
-const postAddress = require('./backend/js/operacoes/postAddress');
-const listWareHouse = require('./backend/js/operacoes/listWareHouse');
-const barCodeWareHouseRoute = require('./backend/js/operacoes/barCodeWareHouse');
-const getWareHouse = require('./backend/js/operacoes/getWareHouse');
-const getProdutos = require('./backend/js/operacoes/getProdutos');
-const getEstoque = require('./backend/js/produtos/getEstoque');
-const getMeta = require('./backend/js/relatorios/getGoal');
-const getProduzir = require('./backend/js/relatorios/getProduction');
-const getPerHour = require('./backend/js/relatorios/getPerHour');
+// const getAllProduction = require('./backend/js/relatorios/getAllProduction');
+// const postAddress = require('./backend/js/operacoes/postAddress');
+// const listWareHouse = require('./backend/js/operacoes/listWareHouse');
+// const barCodeWareHouseRoute = require('./backend/js/operacoes/barCodeWareHouse');
+// const getWareHouse = require('./backend/js/operacoes/getWareHouse');
+// const getProdutos = require('./backend/js/operacoes/getProdutos');
+// const getEstoque = require('./backend/js/produtos/getEstoque');
+// const getMeta = require('./backend/js/relatorios/getGoal');
+// const getProduzir = require('./backend/js/relatorios/getProduction');
+// const getPerHour = require('./backend/js/relatorios/getPerHour');
 const appExpress = express();
 const port = 8080;
 
 let win;
 
-appExpress.use(bodyParser.json());
-appExpress.use(bodyParser.urlencoded({ extended: true }));
+// appExpress.use(bodyParser.json());
+// appExpress.use(bodyParser.urlencoded({ extended: true }));
 
-autoUpdater.autoDownload = true; 
-autoUpdater.autoInstallOnAppQuit = true;
+// autoUpdater.autoDownload = true; 
+// autoUpdater.autoInstallOnAppQuit = true;
 
 
-appExpress.get('/buscaEndereco', getProdutos.getEndereco);
-appExpress.get('/getEstoque', getEstoque.getEstoque);
-appExpress.get('/getGoal', getMeta.getGoal);
-appExpress.get('/getAllProduction', getAllProduction.getAllProduction);
-appExpress.get('/getProduction', getProduzir.getProduction);
-appExpress.post('/addressRegister', postAddress.postAddress);
-appExpress.get('/listWareHouse', listWareHouse.listWareHouse);
-barCodeWareHouseRoute(appExpress);
-appExpress.get('/getWareHouse', getWareHouse.getWareHouse);
-appExpress.get('/getPerHour', getPerHour.getPerHour);
+// appExpress.get('/buscaEndereco', getProdutos.getEndereco);
+// appExpress.get('/getEstoque', getEstoque.getEstoque);
+// appExpress.get('/getGoal', getMeta.getGoal);
+// appExpress.get('/getAllProduction', getAllProduction.getAllProduction);
+// appExpress.get('/getProduction', getProduzir.getProduction);
+// appExpress.post('/addressRegister', postAddress.postAddress);
+// appExpress.get('/listWareHouse', listWareHouse.listWareHouse);
+// barCodeWareHouseRoute(appExpress);
+// appExpress.get('/getWareHouse', getWareHouse.getWareHouse);
+// appExpress.get('/getPerHour', getPerHour.getPerHour);
 
-const customUserDataPath = path.join('C:', 'RemainiFolder', 'RemainiUserData');
-app.setPath('userData', customUserDataPath);
-process.env.TEMP = path.join('C:', 'RemainiFolder', 'Temp');
-app.whenReady().then(() => {
-  autoUpdater.checkForUpdates();
-});
+// const customUserDataPath = path.join('C:', 'RemainiFolder', 'RemainiUserData');
+// app.setPath('userData', customUserDataPath);
+// process.env.TEMP = path.join('C:', 'RemainiFolder', 'Temp');
+// app.whenReady().then(() => {
+//   autoUpdater.checkForUpdates();
+// });
 
 function createWindow() {
   const tray = new Tray(__dirname + '/assets/resources/appIcon.png'); // Carrega o ícone na bandeja do sistema

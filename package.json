@@ -64,8 +64,8 @@
       "provider": "github",
       "owner": "ErickLaufer",
       "repo": "ProjectIOPoint",
-      "releaseType": "release"
-      // "token": ""
+      "releaseType": "release",
+      "token": ""
     }
   },
   "author": "Erick_Laufer",
