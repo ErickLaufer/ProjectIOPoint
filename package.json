@@ -1,7 +1,7 @@
 {
   "name": "remaini",
   "version": "1.0.9",
-  "description": "Gestão de Férias",
+  "description": "Sistema de controle de Estoque e Producao",
   "main": "./main.js",
   "scripts": {
     "start": "electron main.js",
@@ -64,7 +64,8 @@
       "provider": "github",
       "owner": "ErickLaufer",
       "repo": "ProjectIOPoint",
-      "releaseType": "release"
+      "releaseType": "release",
+      "token": ""
     }
   },
   "author": "Erick_Laufer",
