@@ -1,7 +1,7 @@
 {
   "name": "remaini",
   "version": "1.0.9",
-  "description": "Sistema de controle de Estoque e Producao",
+  "description": "Gestão de Férias",
   "main": "./main.js",
   "scripts": {
     "start": "electron main.js",
