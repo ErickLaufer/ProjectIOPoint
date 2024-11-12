@@ -7,74 +7,102 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: black;
         }
+        h2 {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.76);
+            margin-bottom: 30px;
+}
         .container {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h2 {
-            text-align: center;
-        }
-        #calendario {
+        label {
             display: block;
-            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
-    </style>
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0077ff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4fa1ff;
+        }
+</Style>
 </head>
 <body>
 
     <div class="container-header">
         <!-- Back Button -->
-        <a href="../../index.html" class="btn btn-warning" id="btn-return">
+        <a href="../../index.html" class="btn btn-primary" id="btn-return">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
             <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
           </svg>
         </a>
-        <h3>Cadastro de Férias</h3>
     </div>
 
+    <h2>Cadastro de Férias</h2>
+
     <div class="container">
-        <h2>Selecione o Período no Calendário</h2>
-        <!-- Calendário que exibirá o range -->
-        <div id="calendario"></div>
+        <form id="cadastro-form">
+            <label for="nome">Funcionário:</label>
+            <input type="text" id="nome" name="nome" required>
+    
+            <label for="range-data">Selecione o período:</label>
+            <input type="text" id="range-data" name="range-data" placeholder="Selecione o intervalo de datas" required>
+    
+            <button type="submit">Enviar</button>
+        </form>
     </div>
     
     <!-- Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     
+    <!-- Script para inicializar o Flatpickr -->
     <script>
-        // Inicializar o Flatpickr diretamente no div do calendário para exibir embutido
-        flatpickr("#calendario", {
-            mode: "range", // Permitir a seleção de intervalo
-            inline: true,  // Exibe o calendário embutido na página
-            dateFormat: "d/m/Y", // Formato de data
-            locale: {
-                firstDayOfWeek: 0, // Começa no domingo
-                weekdays: {
-                    shorthand: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
-                    longhand: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializa o Flatpickr com o modo range de datas
+            flatpickr("#range-data", {
+                mode: "range",
+                dateFormat: "d/m/Y",
+                locale: {
+                    firstDayOfWeek: 0, // Começa no domingo
+                    weekdays: {
+                        shorthand: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+                        longhand: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
+                    },
+                        months: {
+                            shorthand: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                            longhand: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                    }
                 },
-                months: {
-                    shorthand: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-                    longhand: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-                }
-            },
-            onChange: function(selectedDates) {
-                // Ação após selecionar um range de datas
-                console.log("Datas selecionadas: ", selectedDates.map(date => date.toLocaleDateString('pt-BR')).join(' até '));
-            }
+            });
         });
     </script>
-    
     </body>
     </html>
