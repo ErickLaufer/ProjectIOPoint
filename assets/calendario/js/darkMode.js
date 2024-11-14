@@ -48,7 +48,6 @@ const changeColors = (colors) => {
 }
 
 
-
 checkbox.addEventListener("change", ({target}) => {
     target.checked ? changeColors(darkMode) : changeColors(initialColors)
 })
